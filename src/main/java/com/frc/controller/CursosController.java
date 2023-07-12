@@ -38,7 +38,7 @@ public class CursosController {
 	}
 	@GetMapping(value = "buscar/{codigo}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Curso buscar(@PathVariable("codigo") String codigo) {
-		return service.burscarCurso(codigo);
+		return service.buscarCurso(codigo);
 	}
 	@GetMapping(value = "precio")
 	public List<Curso> listadoPrecio(@RequestParam("minimo") double minimoPrecio, @RequestParam("maximo") double maximoPrecio){

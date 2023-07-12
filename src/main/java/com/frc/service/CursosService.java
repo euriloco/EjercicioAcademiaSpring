@@ -9,7 +9,7 @@ public interface CursosService {
 	List<Curso>	altaCurso(Curso curso);
 	List<Curso> eliminarCurso(String codCurso);
 	void actualizarDuracion(String codCurso, int horas);
-	Curso burscarCurso(String codCurso);
+	Curso buscarCurso(String codCurso);
 	List<Curso> listadoPorPrecio(double minimo, double maximo);
 	
 

@@ -40,9 +40,20 @@ public class CursosServiceImpl implements CursosService {
 			dao.save(actualizado);
 		}
 	}
+	/*  Es preferible utilizar las anotaciones de Spring Data JPA 
+	 *  y dejarle a Spring que realice la implementación del código. 
+	 *  A parte de ahorrarnos código, el hecho de que lo deleguemos 
+	 *  en Spring esta tarea permitirá al framework aplicar las técnicas 
+	 *  apropiadas para realizarla de la forma más óptima posible.
+	 *  Con lo cual el método anterior estaría mejor si fuese:
+	 *  @Modifying
+		@Transactional
+		@Query("update Curso c set c.duracion = ?1 where c.codCurso = ?2")
+		void actualizarDuracionCurso(int duracion, int codCurso);
+	 */
 
 	@Override
-	public Curso burscarCurso(String codCurso) {
+	public Curso buscarCurso(String codCurso) {
 		return dao.findById(codCurso).orElse(null);
 	}
 
